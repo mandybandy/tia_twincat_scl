@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="FB_TwinCat" Id="{ddc5bf00-72ef-445b-b5e5-e6d1b5d2fc4b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TwinCat
+VAR_INPUT
+	input	:	BOOL;
+	inputreal:	REAL;
+END_VAR
+VAR_OUTPUT
+	outputreal			:	real;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF input=TRUE THEN
+	outputreal:=inputreal;
+END_IF
+//oder
+IF 			input=FALSE THEN
+	outputreal:=inputreal/2;
+END_IF;]]></ST>
+    </Implementation>
+
+  </POU>
+</TcPlcObject>

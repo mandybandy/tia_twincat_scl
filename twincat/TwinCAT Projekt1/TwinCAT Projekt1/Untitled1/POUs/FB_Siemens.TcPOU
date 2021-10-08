@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="FB_Siemens" Id="{1c07b5fc-28d6-44e5-8f78-58efd977b308}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Siemens
+   VAR_INPUT 
+      input : Bool;
+      inputreal : Real;
+   END_VAR
+
+   VAR_OUTPUT 
+      outputreal : Real;
+   END_VAR
+   ]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+          	IF #input = TRUE THEN
+	    #outputreal := #inputreal;
+	END_IF;
+	//oder
+	IF #input = FALSE THEN
+	    #outputreal := #inputreal / 2;
+	END_IF;
+    ]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Siemens">
+      <LineId Id="3" Count="7" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
